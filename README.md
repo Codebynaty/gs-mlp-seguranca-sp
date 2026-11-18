@@ -1,5 +1,7 @@
 # GS MLP Segurança SP — Roubo vs Furto de Celulares
 
+🔗 **App online:** https://gs-mlp-seguranca-sp-qfjkgypk2qpssvaqjycvce.streamlit.app/
+
 App web (Streamlit) que usa uma rede neural MLP treinada em Keras/TensorFlow para
 classificar uma ocorrência **já registrada** de subtração de celular na capital de
 São Paulo como **Roubo** (art. 157, com violência/ameaça) ou **Furto** (art. 155,
@@ -82,12 +84,17 @@ python scripts/smoke_test.py
 
 1. Envie este repositório para o GitHub (repositório público ou privado).
 2. Acesse https://share.streamlit.io e conecte sua conta do GitHub.
-3. Clique em **New app**, selecione o repositório, o branch (`main`) e aponte o
+3. Clique em **Create app**, selecione o repositório, o branch (`main`) e aponte o
    **Main file path** para `app.py`.
-4. Clique em **Deploy**. O Streamlit Cloud instala o `requirements.txt`
+4. ⚠️ **Em _Advanced settings_, selecione a versão de Python `3.12`.** O
+   `tensorflow-cpu==2.18.0` só tem wheels até Python 3.12; se deixar o padrão atual
+   do Cloud (3.13), a instalação falha com *"No matching distribution found for
+   tensorflow-cpu"*. A versão de Python só pode ser escolhida na criação do app —
+   depois fica travada, então, se errar, é preciso apagar e recriar o app.
+5. Clique em **Deploy**. O Streamlit Cloud instala o `requirements.txt`
    automaticamente.
 
-**App online:** _(colar o link aqui após o deploy)_
+**App online:** https://gs-mlp-seguranca-sp-qfjkgypk2qpssvaqjycvce.streamlit.app/
 
 ## Uso de IA generativa
 
