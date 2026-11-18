@@ -70,13 +70,13 @@ Para um teste rápido via terminal (carrega os artefatos e faz uma predição):
 python scripts/smoke_test.py
 ```
 
-> **NOTA sobre versões:** o `encoder.pkl` e o `modelo_mlp.keras` foram gerados com
-> versões específicas de **scikit-learn** e **tensorflow**. As versões fixadas em
-> `requirements.txt` são recentes e compatíveis, mas, idealmente, a versão do
-> **scikit-learn** usada aqui deve coincidir com a que criou o `encoder.pkl` — uma
-> divergência pode gerar *warnings* de versão ou, em casos extremos, falha ao
-> carregar o encoder. Se isso ocorrer, ajuste a versão de `scikit-learn` em
-> `requirements.txt` para a mesma usada no treino (ver `notebook/GS_CNN.ipynb`).
+> **NOTA sobre versões:** os artefatos foram gerados com **scikit-learn 1.6.1**
+> (o `encoder.pkl`) e **Keras 3.13.2 / TensorFlow** (o `modelo_mlp.keras`). O
+> `requirements.txt` já fixa `scikit-learn==1.6.1` para coincidir com o encoder e
+> evitar *warnings* de versão. O modelo é uma MLP simples (camadas Dense/Dropout) e
+> carrega normalmente com o `tensorflow-cpu` fixado. Se aparecer algum aviso de
+> versão do TensorFlow/Keras ao carregar, basta atualizar o `tensorflow-cpu` para
+> uma versão mais recente.
 
 ## Como publicar no Streamlit Community Cloud
 
